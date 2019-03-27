@@ -23,6 +23,13 @@ en:
       link1: "Ruby on Rails Tutorial"
       p2: "sample application."
       signup: "Sign up now!"
+  static_pages:
+    home:
+      title: "Home"
+      heading: "Sample App"
+      p1: "This is the home page for the "
+      link1: "Ruby on Rails Tutorial"
+      p2: "sample application."
     help:
       title: "Help"
       heading: "Help"
