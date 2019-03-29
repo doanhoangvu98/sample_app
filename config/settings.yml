@@ -5,3 +5,5 @@ email:
   maximum: 255
 pwd:
   minimum: 6
+gravatar:
+  size: 80
