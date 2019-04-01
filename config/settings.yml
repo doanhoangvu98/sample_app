@@ -7,3 +7,5 @@ pwd:
   minimum: 6
 gravatar:
   size: 80
+create:
+  remember: 1
