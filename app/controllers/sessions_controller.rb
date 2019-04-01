@@ -3,15 +3,16 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @user && @user.authenticate(params[:session][:password])
+    if @user.authenticate(params[:session][:password])
       # login and redirect to user page
       log_in @user
-      params[:session][:remember_me] ==
-        Settings.create.remember ?
-        remember(@user) : forget(@user)
+      if params[:session][:remember_me] == Settings.create.remember
+        remember @user
+      else
+        forget @user
+      end
       # remember user
       redirect_to @user
-      #redirect_back_or @user
     else
       flash.now[:danger] = t "controllers.sessions.invalid"
       render :new
