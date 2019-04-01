@@ -1,9 +1,9 @@
-<h1><%= t "users_mailer.title" %></h1>
+<h1><%= t "users_mailer.activated.title" %></h1>
 
-<p><%= t "users_mailer.hi" %><%= @user.name %>,</p>
+<p><%= t "users_mailer.activated.hi" %><%= @user.name %>,</p>
 
 <p>
-<%= t "users_mailer.click_activate" %>
+<%= t "users_mailer.activated.click_activate" %>
 </p>
 
-<%= link_to  t("users_mailer.activate"), edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= link_to  t("users_mailer.activated.activate"), edit_account_activation_url(@user.activation_token, email: @user.email) %>
