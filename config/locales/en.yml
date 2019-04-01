@@ -38,6 +38,11 @@ en:
       micropost:
         one: "1 micropost"
         other: "%{count} microposts"
+      show_follow:
+        micropost: "Microposts:"
+    stats:
+      following: "following"
+      followers: "followers"
   static_pages:
     home:
       title: "Home"
@@ -123,6 +128,12 @@ en:
     user:
       delete: "delete"
       sure: "You sure?"
+    follow:
+      fol: "Follow"
+    unfollow:
+      unf: "Unfollow"
+    show_follow:
+      profile: "view my profile"
   sessions:
     new:
       login: "Log in"
@@ -179,6 +190,8 @@ en:
         success: "Password has been reset."
         error: "can't be empty"
       expire: "Password reset has expired."
+    relationship:
+      danger: "Invalid email/password combination"
   mailer:
     activation:
       subject: "Account activation"
