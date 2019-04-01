@@ -20,10 +20,24 @@ en:
       about: "About"
       contact: "Contact"
       news: "News"
+  microposts:
+    micropost:
+      posted: "Posted "
+      ago: "ago"
+      delete: "delete"
+      confirm: "You sure?"
   shared:
     message:
       one: The form contains 1 error
       other: The form contains %{count} errors
+    micropost:
+      placeholder: "Compose new micropost..."
+      submit: "Post"
+    user:
+      profile: "view my profile"
+      micropost:
+        one: "1 micropost"
+        other: "%{count} microposts"
   static_pages:
     home:
       title: "Home"
@@ -32,6 +46,8 @@ en:
       link1: "Ruby on Rails Tutorial"
       p2: "sample application."
       signup: "Sign up now!"
+      feed: "Micropost Feed"
+      alt: "Rails logo"
     help:
       title: "Help"
       heading: "Help"
@@ -103,7 +119,9 @@ en:
       confirmation: "Confirmation"
       save: "Save changes"
       change: "change"
+    micropost: "Microposts (%{count})"
     user:
+      delete: "delete"
       sure: "You sure?"
   sessions:
     new:
@@ -125,6 +143,12 @@ en:
       confirmation: "Confirmation"
       submit: "Update password"
   controllers:
+    application:
+      login: "Please log in."
+    microposts:
+      createsuccess: "Micropost created!"
+      deletesuccess: "Micropost deleted"
+      deletedanger: "Can not delete!"
     users:
       welcome: "Welcome to the Sample App!"
       checkmail: "Please check your email to activate your account."
@@ -155,6 +179,14 @@ en:
         success: "Password has been reset."
         error: "can't be empty"
       expire: "Password reset has expired."
-  mailers:
-    test:
-      hi: "Hi"
+  mailer:
+    activation:
+      subject: "Account activation"
+    resetpass:
+      subject: "Password reset"
+  models:
+    picture:
+      size: "should be less than 5MB"
+  javascripts:
+    micropost:
+      alert: "Maximum file size is 5MB. Please choose a smaller file."
