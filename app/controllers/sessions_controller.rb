@@ -4,15 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user.authenticate(params[:session][:password])
-      # login and redirect to user page
-      log_in @user
-      if params[:session][:remember_me] == Settings.create.remember
-        remember @user
-      else
-        forget @user
-      end
-      # remember user
-      redirect_to @user
+      activated @user
     else
       flash.now[:danger] = t "controllers.sessions.invalid"
       render :new
@@ -29,5 +21,20 @@ class SessionsController < ApplicationController
     return if @user
     flash[:danger] = t "controllers.sessions.invalid"
     redirect_to root_path
+  end
+
+  def activated user
+    if user.activated?
+      log_in user
+      if params[:session][:remember_me] == Settings.create.remember
+        remember(user)
+      else
+        forget user
+      end
+      redirect_to user
+    else
+      flash[:warning] = t "controllers.sessions.not_activated"
+      redirect_to root_path
+    end
   end
 end
