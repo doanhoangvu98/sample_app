@@ -7,6 +7,7 @@ pwd:
   minimum: 6
 gravatar:
   size: 80
+  show_follow: 30
 create:
   remember: 1
 page: 10
@@ -25,3 +26,5 @@ shared:
 views:
   micropost:
     accept: "image/jpeg,image/gif,image/png"
+follow:
+  page: 5

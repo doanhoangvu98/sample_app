@@ -462,6 +462,7 @@ DEPENDENCIES
   config
   faker (= 1.7.3)
   fog (= 1.42)
+  fog-aws
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   i18n-js
