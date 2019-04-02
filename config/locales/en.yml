@@ -73,8 +73,10 @@ en:
       submit: "Log in"
       email: "Email"
       password: "Password"
+      remember: "Remember me on this computer"
   controllers:
       users:
         welcome: "Welcome to the Sample App!"
       sessions:
         invalid: "Invalid email/password combination"
+

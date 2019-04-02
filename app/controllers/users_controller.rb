@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:danger] = t ".not_found"
+    flash[:danger] = t ".invalid"
     redirect_to root_path
   end
 end
