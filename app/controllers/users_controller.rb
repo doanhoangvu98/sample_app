@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: :show
+  before_action :logged_in_user, except: %i(new create show)
+  before_action :load_user, except: %i(index new create)
+  before_action :correct_user, only: %i(edit update)
+  before_action :admin_user, only: :destroy
+
   def show; end
 
   def new
     @user = User.new
+  end
+
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.page
   end
 
   def create
@@ -14,6 +22,26 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "controllers.users.update"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "controllers.users.delete"
+    else
+      flash[:danger] = t "controllers.users.danger_delete"
+    end
+    redirect_to users_path
   end
 
   private
@@ -28,5 +56,23 @@ class UsersController < ApplicationController
     return if @user
     flash[:danger] = t ".invalid"
     redirect_to root_path
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "controllers.users.login"
+    redirect_to login_path
+  end
+
+  # confirms the correct user
+  def correct_user
+    redirect_to root_path unless current_user? @user
+  end
+
+  # confirms an admin user.
+  def admin_user
+    redirect_to root_path unless current_user.admin?
   end
 end

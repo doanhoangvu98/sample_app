@@ -9,3 +9,4 @@ gravatar:
   size: 80
 create:
   remember: 1
+page: 10

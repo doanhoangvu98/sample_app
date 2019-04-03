@@ -2,7 +2,7 @@ require "test_helper"
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:michael)
+    @user = users(:vu)
   end
 
   test "login with invalid information" do
