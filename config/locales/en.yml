@@ -57,6 +57,12 @@ en:
       p4: "to teach web development with"
       link3: "Ruby on Rails."
       p5: "This is the sample application for the tutorial."
+  users_mailer:
+    title: "Sample App"
+    hi: "Hi "
+    click_activate: "Welcome to the Sample App! Click on the link below to
+    activate your account:"
+    activate: "Activate"
   users:
     index:
       alluser: "All users"
@@ -99,9 +105,19 @@ en:
   controllers:
     users:
       welcome: "Welcome to the Sample App!"
+      checkmail: "Please check your email to activate your account."
       update: "Profile updated!"
       login: "Please log in."
       delete: "User deleted"
       danger: "Can not delete"
     sessions:
       invalid: "Invalid email/password combination"
+      not_activated: "Account not activated. Check your email for the
+      activation link."
+    account:
+      success: "Account activated!"
+      danger: "Invalid activation link"
+      invalid: "Invalid email/password combination"
+  mailers:
+    test:
+      hi: "Hi"

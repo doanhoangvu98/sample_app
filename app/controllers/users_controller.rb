@@ -17,8 +17,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t "controllers.users.welcome"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "controllers.users.checkmail"
+      redirect_to root_path
     else
       render :new
     end
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
     if @user.destroy
       flash[:success] = t "controllers.users.delete"
     else
-      flash[:danger] = t "controllers.users.danger_delete"
+      flash[:danger] = t "controllers.users.danger"
     end
     redirect_to users_path
   end
