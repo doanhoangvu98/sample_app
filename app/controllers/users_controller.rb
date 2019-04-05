@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update_attributes user_params
+    if @user.update_attributes(user_params)
       flash[:success] = t "controllers.users.update"
       redirect_to @user
     else
@@ -39,10 +39,10 @@ class UsersController < ApplicationController
   def destroy
     if @user.destroy
       flash[:success] = t "controllers.users.delete"
+      redirect_to users_path
     else
       flash[:danger] = t "controllers.users.danger"
     end
-    redirect_to users_path
   end
 
   private
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:danger] = t ".invalid"
+    flash[:danger] = t "controllers.sessions.invalid"
     redirect_to root_path
   end
 

@@ -63,6 +63,18 @@ en:
     click_activate: "Welcome to the Sample App! Click on the link below to
     activate your account:"
     activate: "Activate"
+    activated:
+      title: "Sample App"
+      hi: "Hi "
+      click_activate: "Welcome to the Sample App! Click on the link below to
+      activate your account:"
+      activate: "Activate"
+    reset:
+      title: "Password reset"
+      click: "To reset your password click the link below:"
+      p1: "This link will expire in two hours."
+      p2: "If you did not request your password to be reset, please ignore this
+       email and your password will stay as it is."
   users:
     index:
       alluser: "All users"
@@ -102,6 +114,16 @@ en:
       email: "Email"
       password: "Password"
       remember: "Remember me on this computer"
+      forgot_pass: "(forgot password)"
+  password_resets:
+    new:
+      title: "Forgot password"
+      submit: "Submit"
+    edit:
+      title: "Reset password"
+      password: "Password"
+      confirmation: "Confirmation"
+      submit: "Update password"
   controllers:
     users:
       welcome: "Welcome to the Sample App!"
@@ -118,6 +140,21 @@ en:
       success: "Account activated!"
       danger: "Invalid activation link"
       invalid: "Invalid email/password combination"
+    sessions:
+      invalid: "Invalid email/password combination"
+      not_activated: "Account not activated. "
+      checkmail: "Check your email for the activation link."
+    account:
+      success: "Account activated!"
+      danger: "Invalid activation link"
+    password_resets:
+      create:
+        info: "Email sent with password reset instructions"
+        danger: "Email address not found"
+      update:
+        success: "Password has been reset."
+        error: "can't be empty"
+      expire: "Password reset has expired."
   mailers:
     test:
       hi: "Hi"

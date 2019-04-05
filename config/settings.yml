@@ -10,3 +10,5 @@ gravatar:
 create:
   remember: 1
 page: 10
+expired:
+  time: 2
