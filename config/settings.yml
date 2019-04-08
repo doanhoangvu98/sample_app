@@ -12,3 +12,16 @@ create:
 page: 10
 expired:
   time: 2
+micropost:
+  content:
+    maximum: 140
+  picture:
+    size: 5
+  gravatar:
+    size: 50
+shared:
+  userinfo:
+    size: 50
+views:
+  micropost:
+    accept: "image/jpeg,image/gif,image/png"
